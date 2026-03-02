@@ -1,0 +1,37 @@
+:root {
+  --background-color: #007294;
+  --heading-color: #007897;
+  --a-link-color: #5d93a2;
+
+  --header-background-color: #007b9d;
+  --header-background-border: #006e8b;
+  --header-background-shadow: #12a0bf;
+  
+  --header-nav-a-current-color: #007897;
+  --header-nav-a-hover-color: #0882a1;
+
+  --button-background-color: #007b9d;
+  --button-border-color: #006e8b;
+  --button-box-shadow-color: #18a8c8;
+
+  --button-hover-image-color-top: #1b9fbe;
+  --button-hover-image-color-bottom: #118eb1;
+  --button-hover-color: #118eb1;
+  --button-hover-box-shadow-color: #3ecceb;
+
+  /* Not currently used visible due to lack of images inside these elements */
+  --button-background-image-top: #008dad;
+  --button-background-image-bottom: #007b9d;
+
+  --header-nav-a-current-image-top: #007b99;
+  --header-nav-a-current-image-bottom: #007897;
+
+  --header-nav-a-hover-image-top: #0782a0;
+  --header-nav-a-hover-image-bottom: #077d9b;
+
+  --header-background-image-top: #008ead;
+  --header-background-image-bottom: #007b9d;
+
+  --background-image-color-top: #008dab;
+  --background-image-color-bottom: #007294;
+}

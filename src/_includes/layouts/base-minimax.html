@@ -1,0 +1,30 @@
+<!-- A fully fleshed-out <head>, dynamically changing based on client.json and the page front matter -->
+
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="/assets/minimax/css/main.css" />
+		<!-- Scripts -->
+		<script src="/assets/minimax/js/jquery.min.js"></script>
+		<script src="/assets/minimax/js/browser.min.js"></script>
+		<script src="/assets/minimax/js/breakpoints.min.js"></script>
+		<script src="/assets/minimax/js/util.js"></script>
+		<script src="/assets/minimax/js/main.js"></script>
+
+        {% block head %}{% endblock %}
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        <!--Screen reader skip main nav-->
+        <!-- <a class="skip" aria-label="skip to main content" href="#main">Click To Skip To Main Content</a> -->
+
+        {% include "sections/header-minimax.html" %}
+        <main id="main">
+            {% block body %}{% endblock %}
+        </main>
+        {% include "sections/footer-minimax.html" %}
+
+    </body>
+</html>

@@ -1,0 +1,37 @@
+---
+title: "Project One | SXSWeb Designs"
+description: "Modular backpack e-commerce website for startup company"
+permalink: "/project-one/"
+tags: "sitemap" # content/content.json will make sure that all pages in content/ are marked with a "sitemap" tag, for automatic sitemap generation. As index.html is not in content/, we need to add it here to ensure the root page is included in the sitemap generation
+---
+
+{% extends "layouts/base-minimax.html" %}
+
+{% block body %}
+<div id="page-wrapper">
+	<div id="main">
+		<div class="container">
+			<div class="row main-row">
+				<div class="col-12">
+
+					<section>
+						<h2>Project One: Trailflex</h2>
+						<p>Modular backpack e-commerce website for startup company.</p>
+
+                        <picture class="cs-picture cs-picture1 cs-no-cover">
+                            <source media="(max-width: 600px)" srcset="/assets/minimax/images/portfolio/Trailflex-m.webp">
+                            <source media="(min-width: 601px)" srcset="/assets/minimax/images/portfolio/Trailflex.png">
+                            <img aria-hidden="true" decoding="async" src="/assets/minimax/images/portfolio/Trailflex.png" alt="Trailflex modular backpacks" loading="lazy" width="400">
+                            <p class="cs-image-title">Modular backpack e-commerce website for startup company.</p>
+                        </picture>
+
+
+					</section>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

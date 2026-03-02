@@ -1,0 +1,108 @@
+---
+title: "Contact | SWSWeb Designs"
+description: "Contact SXSWeb Designs to get you started with your local business website."
+permalink: "/contact/"
+tags: "sitemap" # content/content.json will make sure that all pages in content/ are marked with a "sitemap" tag, for automatic sitemap generation. As index.html is not in content/, we need to add it here to ensure the root page is included in the sitemap generation
+---
+
+{% extends "layouts/base-minimax.html" %}
+
+{% block body %}
+
+<div id="page-wrapper">
+
+	<!-- Main -->
+	<div id="main">
+		<div class="container">
+			<div class="row main-row">
+				<div class="col-8 col-12-medium">
+
+					<section>
+						<h2>Contact</h2>
+
+						<div class="cs-content">
+							<span class="cs-topper">Contact</span>
+							<h2 class="cs-title">Get in Touch</h2>
+							<p class="cs-text">
+								Let us know if you are ready to get started or have questions.
+							</p>
+						</div>
+						<form id="cs-form-265" name="Contact Form" method="post">
+							<label>
+								Name
+								<input required type="text" id="name-265" name="name" placeholder="Name">
+							</label>
+							<label>
+								Email
+								<input required type="text" id="email-265" name="email" placeholder="Email">
+							</label>
+							<label>
+								Phone
+								<input required type="text" id="phone-265" name="phone" placeholder="Phone">
+							</label>
+							<label>
+								How Did You Find Us
+								<input type="text" id="find-265" name="find-us" placeholder="How did you find us?">
+							</label>
+							<label class="cs-label-message">
+								Message
+								<textarea required name="Message" id="message-265" placeholder="Write message..."></textarea>
+							</label>
+							<button class="cs-button-solid cs-submit" type="submit">Submit Message</button>
+						</form>
+
+
+
+					</section>
+
+				</div>
+				<div class="col-4 col-12-medium">
+
+					<section>
+
+						<!--Email-->
+						<span class="cs-header">Email</span>
+						<p>
+						<a class="cs-link" href="mailto:{{ client.email }}">{{ client.email }}</a>
+						</p>
+						<!--Phone-->
+						<span class="cs-header">Phone</span>
+						<p>
+						<a class="cs-link" href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>
+						</p>
+						<!--Address-->
+						<span class="cs-header">Address</span>
+						<p>
+						<a class="cs-link" href="{{ client.address.mapLink }}">
+							{{ client.address.lineOne }}, <br>
+							{{ client.address.lineTwo }}, <br>
+							{{ client.address.city }}, {{ client.address.state }}
+							{{ client.address.zip }}
+						</a>
+						</p>
+						<!-- Background Image-->
+						<picture class="cs-bg-picture">
+							<!--Mobile Image-->
+							<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 576, height: 640 }) | avif %}" type="image/avif">
+							<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 576, height: 640 }) | webp %}" type="image/webp">
+							<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 576, height: 640 }) | jpeg %}" type="image/jpeg">
+							<!--Tablet Image-->
+							<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 820, height: 1372 }) | avif %}" type="image/avif">
+							<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 820, height: 1372 }) | webp %}" type="image/webp">
+							<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 820, height: 1372 }) | jpeg %}" type="image/jpeg">
+							<!--Desktop Image-->
+							<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 1084, height: 1156 }) | avif %}" type="image/avif">
+							<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 1084, height: 1156 }) | webp %}" type="image/webp">
+							<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 1084, height: 1156 }) | jpeg %}" type="image/jpeg">
+							<img src="{% getUrl "/assets/images/construction.jpg" | resize({ width: 1084, height: 1156 }) | jpeg %}" alt="building" width="542" height="578" decoding="async">
+						</picture>
+
+
+					</section>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+---
+title: "Project Two | SXSWeb Designs"
+description: "TV show engaging with their viewers through a blog site"
+permalink: "/project-two/"
+tags: "sitemap" # content/content.json will make sure that all pages in content/ are marked with a "sitemap" tag, for automatic sitemap generation. As index.html is not in content/, we need to add it here to ensure the root page is included in the sitemap generation
+---
+
+{% extends "layouts/base-minimax.html" %}
+
+{% block body %}
+<div id="page-wrapper">
+	<div id="main">
+		<div class="container">
+			<div class="row main-row">
+				<div class="col-12">
+
+					<section>
+						<h2>Project Two: American-Outdoorsman</h2>
+						<p>TV show engaging with their viewers through a blog site.</p>
+
+                        <picture class="cs-picture cs-picture1 cs-no-cover">
+                            <source media="(max-width: 600px)" srcset="/assets/minimax/images/portfolio/American-Outdoorsman-m.webp">
+                            <source media="(min-width: 601px)" srcset="/assets/minimax/images/portfolio/American-Outdoorsman.png">
+                            <img aria-hidden="true" decoding="async" src="/assets/minimax/images/portfolio/American-Outdoorsman.png" alt="American Outdoorsman TV Show" loading="lazy" width="400">
+                            <p class="cs-image-title">TV show engaging with their viewers through a blog site.</p>
+                        </picture>
+
+
+					</section>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

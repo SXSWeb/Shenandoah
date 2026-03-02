@@ -29,7 +29,7 @@ auth:
 logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 
 # Add site links in Decap CMS (optional)
-site_url: https://shenandoah-baptist.org
+site_url: https://shenandoah-baptist.netlify.app
 
 # Keep this to allow you to edit the cms locally
 local_backend: true

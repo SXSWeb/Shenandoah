@@ -6,12 +6,6 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="/assets/minimax/css/main.css" />
-		<!-- Scripts -->
-		<script src="/assets/minimax/js/jquery.min.js"></script>
-		<script src="/assets/minimax/js/browser.min.js"></script>
-		<script src="/assets/minimax/js/breakpoints.min.js"></script>
-		<script src="/assets/minimax/js/util.js"></script>
-		<script src="/assets/minimax/js/main.js"></script>
 
         {% block head %}{% endblock %}
         <title>{{ title }}</title>
@@ -25,6 +19,13 @@
             {% block body %}{% endblock %}
         </main>
         {% include "sections/footer-minimax.html" %}
+
+		<!-- Scripts -->
+		<script src="/assets/minimax/js/jquery.min.js"></script>
+		<script src="/assets/minimax/js/browser.min.js"></script>
+		<script src="/assets/minimax/js/breakpoints.min.js"></script>
+		<script src="/assets/minimax/js/util.js"></script>
+		<script src="/assets/minimax/js/main.js"></script>
 
     </body>
 </html>

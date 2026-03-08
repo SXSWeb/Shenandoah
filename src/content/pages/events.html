@@ -13,19 +13,14 @@ permalink: "/events/"
 
     <div id="banner-310">
         <div class="cs-container">
-            <span class="cs-int-title">Blog</span>
+            <span class="cs-int-title">Shenandoah Baptist Church: Calendar of Events</span>
             <div class="cs-breadcrumbs">
                 <a href="/" class="cs-link">Home</a>
-                <a href="/blog/" class="cs-link cs-active">Pull in google calendar and have it here</a>
+                <a href="/blog/" class="cs-link cs-active">Here is what we are planning for this month</a>
             </div>
         </div>
         <!--Background Image-->
-        <picture class="cs-background">
-            <!--Mobile Image-->
-            <source media="(max-width: 600px)" srcset="/assets/minimax/images/blog/blog-m.jpg">
-            <source media="(min-width: 601px)" srcset="/assets/minimax/images/blog/blog.jpg">
-            <img aria-hidden="true" decoding="async" src="/assets/minimax/images/blog/blog.jpg" alt="kitchen cabinets" loading="eager" width="90%">
-        </picture>
+       
     </div>
 
     <!-- ============================================ -->
@@ -34,26 +29,12 @@ permalink: "/events/"
 
     <div id="blog-listing">
         <div class="cs-container">
+            <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FChicago&showPrint=0&showTz=0&src=c2hlbmFuZG9haC5iYXB0aXN0Lm9mZmljZUBnbWFpbC5jb20&src=NDg1OWU0OTM4YmVkMjAzYjg0ZTU1M2ZkZTMwZjZmNjM1N2FiZDUzMDY3MzRlMmY1MmQyZThlYTg1MmU1MzdkMUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=YTQzYjI2OWI1YWZhMDM5MDRkNjJhMDNjMzc1M2QxZWQxMDU2ZmRjYjMzNTcxMmZmNzA4ZDk4Y2VmZTRlZTM4OUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=MjkzYmExMWI4YzM5OGQzZmE5Y2ZhMjJlMDY2MDRkNTM0YjE1ZjczZGIxMmVlNWQ5ODAzNGY4MTUwNmU2MmRhN0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=NGM5ZmM2ODFhNTI0ODliZjc1YTJmM2IyYzIxYzNjOGQ3YzEyZjNjMjU3YTgxOTU5ZWYzZTRjN2I5NmM5MmNkY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23039be5&color=%233f51b5&color=%230b8043&color=%23f6bf26&color=%23b39ddb" style="border:solid 1px #777" width="90%" height="600" frameborder="0" scrolling="no"></iframe>
+
             {% if collections.post | length == 0 %}
                 <h1 class="cs-title">No Recent Posts</h1>
             {% else %}
                 {%- for post in collections.post | reverse -%}
-                    <article class="cs-article">
-                        <picture class="cs-article-image">
-                            <!--Mobile Image-->
-                            <source media="(max-width: 600px)" srcset="{% getUrl post.data.image | resize({ width: 576, height: 400 }) | avif %}" type="image/avif">
-                            <source media="(max-width: 600px)" srcset="{% getUrl post.data.image | resize({ width: 576, height: 400 }) | webp %}" type="image/webp">
-                            <source media="(max-width: 600px)" srcset="{% getUrl post.data.image | resize({ width: 576, height: 400 }) | jpeg %}" type="image/jpeg">
-                            <!--Tablet Image-->
-                            <source media="(max-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1142, height: 614 }) | avif %}" type="image/avif">
-                            <source media="(max-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1142, height: 614 }) | webp %}" type="image/webp">
-                            <source media="(max-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1142, height: 614 }) | jpeg %}" type="image/jpeg">
-                            <!--Desktop Image-->
-                            <source media="(min-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1648, height: 800 }) | avif %}" type="image/avif">
-                            <source media="(min-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1648, height: 800 }) | webp %}" type="image/webp">
-                            <source media="(min-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1648, height: 800 }) | jpeg %}" type="image/jpeg">
-                            <img src="{% getUrl post.data.image | resize({ width: 1648, height: 800 }) | jpeg %}" alt="{{ post.data.alt }}" width="824" height="400" decoding="async">
-                        </picture>
                         <div class="cs-article-group">
                             <div class="cs-author-group">
                                 <picture class="cs-author-img">

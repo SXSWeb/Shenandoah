@@ -5,26 +5,17 @@ permalink: "/sermons/"
 tags: "sitemap" # content/content.json will make sure that all pages in content/ are marked with a "sitemap" tag, for automatic sitemap generation. As index.html is not in content/, we need to add it here to ensure the root page is included in the sitemap generation
 ---
 
+{% extends "layouts/one-column.html" %}
+{% block content %}
 
-{% extends "layouts/base-minimax.html" %}
+	<h2>Sermons</h2>
 
-{% block body %}
-<div id="page-wrapper">
-	<div id="main">
-		<div class="container">
-			<div class="row main-row">
-				<div class="col-12">
+	<p>Below is a link to our latest sermons.</p>
 
-					<section>
-<!-- Elfsight YouTube Gallery | Recorded Sermons -->
-<script src="https://elfsightcdn.com/platform.js" async></script>
-<div class="elfsight-app-987fd9db-4a42-4f4f-b4a3-c40e338854a4" data-elfsight-app-lazy></div>
-					</section>
-
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+	<section>
+		<!-- Elfsight YouTube Gallery | Recorded Sermons -->
+		<script src="https://elfsightcdn.com/platform.js" async></script>
+		<div class="elfsight-app-987fd9db-4a42-4f4f-b4a3-c40e338854a4" data-elfsight-app-lazy></div>
+	</section>
 
 {% endblock %}

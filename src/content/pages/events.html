@@ -4,60 +4,51 @@ description: "Looking to expand your business online presence? Take a look at ou
 permalink: "/events/"
 ---
 
-{% extends "layouts/base-minimax.html" %}
+{% extends "layouts/one-column.html" %}
+{% block content %}
 
-{% block body %}
     <!-- ============================================ -->
     <!--                   Banner                     -->
     <!-- ============================================ -->
 
-    <div id="banner-310">
-        <div class="cs-container">
-            <span class="cs-int-title">Shenandoah Baptist Church: Calendar of Events</span>
-            <div class="cs-breadcrumbs">
-                <a href="/" class="cs-link">Home</a>
-                <a href="/blog/" class="cs-link cs-active">Here is what we are planning for this month</a>
-            </div>
+    <h2>Calendar of Events</h2>
 
+    <p>Here is what we are planning for this month.</p>
 
-        </div>
-
-        <!--Background Image-->
-
+    <div>
+        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FChicago&showPrint=0&showTz=0&src=c2hlbmFuZG9haC5iYXB0aXN0Lm9mZmljZUBnbWFpbC5jb20&src=NDg1OWU0OTM4YmVkMjAzYjg0ZTU1M2ZkZTMwZjZmNjM1N2FiZDUzMDY3MzRlMmY1MmQyZThlYTg1MmU1MzdkMUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=YTQzYjI2OWI1YWZhMDM5MDRkNjJhMDNjMzc1M2QxZWQxMDU2ZmRjYjMzNTcxMmZmNzA4ZDk4Y2VmZTRlZTM4OUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=MjkzYmExMWI4YzM5OGQzZmE5Y2ZhMjJlMDY2MDRkNTM0YjE1ZjczZGIxMmVlNWQ5ODAzNGY4MTUwNmU2MmRhN0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=NGM5ZmM2ODFhNTI0ODliZjc1YTJmM2IyYzIxYzNjOGQ3YzEyZjNjMjU3YTgxOTU5ZWYzZTRjN2I5NmM5MmNkY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23039be5&color=%233f51b5&color=%230b8043&color=%23f6bf26&color=%23b39ddb" style="border:solid 1px #777" width="90%" height="600" frameborder="0" scrolling="no"></iframe>
 
     </div>
 
-
     <div id="blog-listing">
         <div class="cs-container">
-            <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FChicago&showPrint=0&showTz=0&src=c2hlbmFuZG9haC5iYXB0aXN0Lm9mZmljZUBnbWFpbC5jb20&src=NDg1OWU0OTM4YmVkMjAzYjg0ZTU1M2ZkZTMwZjZmNjM1N2FiZDUzMDY3MzRlMmY1MmQyZThlYTg1MmU1MzdkMUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=YTQzYjI2OWI1YWZhMDM5MDRkNjJhMDNjMzc1M2QxZWQxMDU2ZmRjYjMzNTcxMmZmNzA4ZDk4Y2VmZTRlZTM4OUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=MjkzYmExMWI4YzM5OGQzZmE5Y2ZhMjJlMDY2MDRkNTM0YjE1ZjczZGIxMmVlNWQ5ODAzNGY4MTUwNmU2MmRhN0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=NGM5ZmM2ODFhNTI0ODliZjc1YTJmM2IyYzIxYzNjOGQ3YzEyZjNjMjU3YTgxOTU5ZWYzZTRjN2I5NmM5MmNkY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23039be5&color=%233f51b5&color=%230b8043&color=%23f6bf26&color=%23b39ddb" style="border:solid 1px #777" width="90%" height="600" frameborder="0" scrolling="no"></iframe>
 
             {% if collections.post | length == 0 %}
                 <h1 class="cs-title">No Recent Posts</h1>
             {% else %}
                 {%- for post in collections.post | reverse -%}
-                        <div class="cs-article-group">
-                            <div class="cs-author-group">
-                                <picture class="cs-author-img">
-                                    <img src="/assets/svgs/profile.svg" alt="Profile icon" width="32" height="32" decoding="async" loading="lazy" aria-hidden="true"/>
-                                </picture>
-                                <span class="cs-author-name">{{ post.data.author }}</span>
-                                <span aria-hidden="true" class="cs-dot"></span>
-                                <span class="cs-date">{{ post.date | postDate }}</span>
-                            </div>
-                            <h2 class="cs-article-title">
-                                {{ post.data.title }}
-                            </h2>
-                            <p class="cs-article-desc">
-                                {{ post.data.description }}
-                            </p>
-                            <a href="{{ post.url }}" class="cs-button-solid">Continue Reading</a>
+                    <div class="cs-article-group">
+                        <div class="cs-author-group">
+                            <picture class="cs-author-img">
+                                <img src="/assets/svgs/profile.svg" alt="Profile icon" width="32" height="32" decoding="async" loading="lazy" aria-hidden="true"/>
+                            </picture>
+                            <span class="cs-author-name">{{ post.data.author }}</span>
+                            <span aria-hidden="true" class="cs-dot"></span>
+                            <span class="cs-date">{{ post.date | postDate }}</span>
                         </div>
-                    </article>
-                {%- endfor -%}
-            {% endif %}
-        </div>
-
-        {% include 'components/featured-posts.html' %}
+                        <h2 class="cs-article-title">
+                            {{ post.data.title }}
+                        </h2>
+                        <p class="cs-article-desc">
+                            {{ post.data.description }}
+                        </p>
+                        <a href="{{ post.url }}" class="cs-button-solid">Continue Reading</a>
+                    </div>
+                </article>
+            {%- endfor -%}
+        {% endif %}
     </div>
+
+    {% include 'components/featured-posts.html' %}
+</div>
 {% endblock %}

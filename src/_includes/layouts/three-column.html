@@ -1,0 +1,22 @@
+{% extends "layouts/base-minimax.html" %}
+{% block body %}
+	<div id="page-wrapper">
+
+		<!-- Main -->
+		<div id="main">
+			<div class="container">
+				<div class="row main-row">
+					<div class="col-3 col-12-medium">
+						{% block content_left %}{% endblock %}
+					</div>
+					<div class="col-6 col-12-medium imp-medium">
+						{% block content_center %}{% endblock %}
+					</div>
+					<div class="col-3 col-12-medium">
+						{% block content_right %}{% endblock %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

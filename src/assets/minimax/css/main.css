@@ -1804,6 +1804,9 @@ input, select, textarea {
 				#titleBar .title {
 					line-height: 44px;
 				}
+				#titleBar .title img {
+					height: 40px;
+				}
 
 				#titleBar .toggle {
 					position: absolute;

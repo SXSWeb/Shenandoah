@@ -4,7 +4,7 @@
 // that page. Any styles shared between pages, including repeated sections,
 // should go into root.scss
 // ─────────────────────────────────────────────────────────────────────────────
-
+@import url('minimax/root.css');
 /*-- -------------------------- -->
 <---          Contact           -->
 <--- -------------------------- -*/
@@ -93,10 +93,10 @@
             font-weight: 700;
             text-align: center;
             margin: 0;
-            color: #fff;
+            color: var(--background-color);
+            background-color: var(--button-background-color);
             min-width: calc(150 / 16 * 1rem);
             padding: 0 calc(24 / 16 * 1rem);
-            background-color: var(--primary);
             border-radius: calc(4 / 16 * 1rem);
             display: inline-block;
             position: relative;
@@ -110,6 +110,7 @@
                 height: 100%;
                 width: 0%;
                 background: #000;
+                background-color: var(--button-hover-color);
                 opacity: 1;
                 top: 0;
                 left: 0;

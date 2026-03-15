@@ -1648,6 +1648,12 @@ input, select, textarea {
 		padding: 4em 0;
 	}
 
+	footer p {
+		line-height: 1.0em;
+		margin-bottom: 1.0em;
+
+	}
+
 /* Copyright */
 
 	#copyright {

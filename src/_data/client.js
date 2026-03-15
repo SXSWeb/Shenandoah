@@ -1,22 +1,24 @@
 module.exports = {
-	"name": "SXSWeb Design",
-	"email": "info@sxsweb.design",
-	"phoneForTel": "5555555555",
-	"phoneFormatted": "(555) 555-5555",
+	"name": "Shenandoah Baptist Church",
+	"email": "shenandoah.baptist.office@gmail.com",
+	"phoneForTel": "5122586909",
+	"phoneFormatted": "(512) 258-6909",
 	"address": {
-		"lineOne": "SXSWeb Design",
-		"lineTwo": "7413 Sagira Path",
-		"city": "Austin",
+		"lineOne": "Shenandoah Baptist Church",
+		"lineTwo": "3003 Blue Ridge Dr.",
+		"city": "Cedar Park",
 		"state": "TX",
-		"zip": "78724",
-		"mapLink": "https://maps.app.goo.gl/5ryBu5c4nCtZVmGw9"
+		"zip": "78613",
+		"mapLink": "https://maps.app.goo.gl/KfWgCJiSQ1AQrNe36"
 	},
+
+
     socials: {
-        facebook: "https://www.facebook.com/",
-        instagram: "https://www.instagram.com/",
+        facebook: "https://www.facebook.com/ShenandoahBaptistChurch.CedarPark",
+        youtube: "https://www.youtube.com/@Shenandoahcptx/streams",
     },
     //! Make sure you include the file protocol (e.g. https://) and that NO TRAILING SLASH is included
-    domain: "https://sxsweb.design",
+    domain: "https://shenandoah-baptist.org",
     // Passing the isProduction variable for use in HTML templates
     isProduction: process.env.ELEVENTY_ENV === "PROD",
 };

@@ -3,45 +3,20 @@
 <!-- ============================================ -->
 
 <footer id="cs-footer-275">
-<!-- Footer -->
+    <!-- Footer -->
     <div id="footer-wrapper">
         <div class="container">
             <div class="row">
                 <div class="col-8 col-12-medium">
 
                     <section>
-                        <h2>How about a truckload of links?</h2>
+                        <h2>Contact Us</h2>
                         <div>
-                            <div class="row">
-                                <div class="col-3 col-6-medium col-12-small">
-                                    <ul class="link-list">
-                                        <li><a href="#">Sed neque nisi consequat</a></li>
-                                        <li><a href="#">Dapibus sed mattis blandit</a></li>
-                                        <li><a href="#">Quis accumsan lorem</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-3 col-6-medium col-12-small">
-                                    <ul class="link-list">
-                                        <li><a href="#">Quis accumsan lorem</a></li>
-                                        <li><a href="#">Sed neque nisi consequat</a></li>
-                                        <li><a href="#">Eget et amet consequat</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-3 col-6-medium col-12-small">
-                                    <ul class="link-list">
-                                        <li><a href="#">Sed neque nisi consequat</a></li>
-                                        <li><a href="#">Dapibus sed mattis blandit</a></li>
-                                        <li><a href="#">Quis accumsan lorem</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-3 col-6-medium col-12-small">
-                                    <ul class="link-list">
-                                        <li><a href="#">Quis accumsan lorem</a></li>
-                                        <li><a href="#">Sed neque nisi consequat</a></li>
-                                        <li><a href="#">Eget et amet consequat</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <p>{{ client.address.lineOne }}</p>
+                            <p>{{ client.address.lineTwo }}</p>
+                            <p>{{ client.address.city }}, 
+                                {{ client.address.state }}
+                                {{ client.address.zip }}</p>
                         </div>
                     </section>
 
@@ -65,6 +40,9 @@
 
                     <div id="copyright">
                         &copy; {{ client.name }}. All rights reserved. | <a href="mailto:{{ client.email }}">{{ client.email }}</a>
+                    </div>
+                    <div>
+                        Webpage design by <a =href="https://sxsweb.design/">SWSWeb</a>
                     </div>
 
                 </div>

@@ -34,7 +34,7 @@ body {
 }
 
 ol, ul {
-	list-style: none;
+	/*list-style: none;*/
 }
 
 blockquote, q {
@@ -104,7 +104,7 @@ input, select, textarea {
 	}
 
 	h2 {
-		font-size: 1.6em;
+		font-size: 1.8em;
 		letter-spacing: -1px;
 		margin-bottom: 1em;
 	}
@@ -115,16 +115,24 @@ input, select, textarea {
 	}
 
 	h3 {
-		font-size: 1.2em;
+		font-size: 1.4em;
 		margin-bottom: 0.8em;
 	}
 
 	h4 {
-		font-size: 1em;
+		font-size: 1.2em;
+	}
+
+	h5 {
+		font-size: 1.1em;
 	}
 
 	p, ul {
 		margin-bottom: 1.25em;
+	}
+
+	li {
+		/*margin-bottom: 1.25em;*/
 	}
 
 	p {
@@ -144,8 +152,8 @@ input, select, textarea {
 		margin: 4px 0 2.25em 0;
 	}
 
-	ul {
-		padding: 0.25em 0 0 0;
+	ol, ul {
+		padding: 0.25em 0 0 2.5em;
 	}
 
 	a {
@@ -1469,6 +1477,10 @@ input, select, textarea {
 		ul.big-image-list li img {
 			width: 178px;
 		}
+
+	ul.link-list {
+		list-style: none;
+	}
 
 	ul.link-list li {
 		border-top: solid 1px #ced0b7;

@@ -1,0 +1,579 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap');
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  :root {
+    --navy: #1C3557;
+    --navy-mid: #2A4A6B;
+    --gold: #C09A44;
+    --gold-light: #E4C36A;
+    --cream: #F7F3EC;
+    --warm-white: #FDFAF5;
+    --stone: #E8E0D0;
+    --text-dark: #1A1714;
+    --text-mid: #4A3F35;
+    --text-muted: #7A6E62;
+    --teal: #2E7D6B;
+    --border: rgba(28,53,87,0.12);
+  }
+  body {
+    font-family: 'Source Serif 4',Georgia,serif;
+    background: var(--warm-white);
+    color: var(--text-dark);
+  }
+
+  nav {
+    background: var(--navy);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    border-bottom: 3px solid var(--gold);
+  }
+  .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .logo-name {
+    font-family: 'Playfair Display',Georgia,serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+  }
+  .logo-sub {
+    font-family: 'Source Serif 4',serif;
+    font-size: 11px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--gold-light);
+    letter-spacing: 0.06em;
+    margin-top: 3px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+  .nav-links a {
+    color: rgba(255,255,255,.82);
+    text-decoration: none;
+    font-size: 14px;
+    font-family: 'Source Serif 4',serif;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    padding: 8px 14px;
+    border-radius: 4px;
+    transition: background 0.2s,color 0.2s;
+  }
+  .nav-links a:hover {
+    background: rgba(255,255,255,.1);
+    color: #fff;
+  }
+  .nav-give {
+    background: var(--gold)!important;
+    color: var(--navy)!important;
+    font-weight: 600!important;
+    padding: 8px 18px!important !important;
+    border-radius: 4px!important;
+  }
+  .nav-give:hover {
+    background: var(--gold-light)!important;
+  }
+
+  .hero {
+    background: linear-gradient(160deg,var(--navy) 0%,var(--navy-mid) 55%,#1E4E3A 100%);
+    padding: 56px 40px 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    border: 1px solid rgba(192,154,68,.15);
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 0.12em;
+    color: var(--gold-light);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .hero-title {
+    font-family: 'Playfair Display',Georgia,serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.18;
+    margin-bottom: 16px;
+  }
+  .hero-title span {
+    color: var(--gold-light);
+  }
+  .hero-subtitle {
+    font-size: 17px;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255,255,255,.75);
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy);
+    border: none;
+    padding: 13px 24px;
+    font-family: 'Source Serif 4',serif;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover {
+    background: var(--gold-light);
+  }
+  .btn-secondary {
+    background: transparent;
+    color: rgba(255,255,255,.88);
+    border: 1.5px solid rgba(255,255,255,.35);
+    padding: 12px 22px;
+    font-family: 'Source Serif 4',serif;
+    font-size: 15px;
+    font-weight: 400;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border-color 0.2s,color 0.2s;
+  }
+  .btn-secondary:hover {
+    border-color: rgba(255,255,255,.65);
+    color: #fff;
+  }
+  .hero-video {
+    background: rgba(0,0,0,.35);
+    border-radius: 10px;
+    border: 1px solid rgba(192,154,68,.3);
+    aspect-ratio: 16/9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+  }
+  .play-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s,background 0.2s;
+  }
+  .play-btn:hover {
+    transform: scale(1.06);
+    background: var(--gold-light);
+  }
+  .video-label {
+    font-size: 13px;
+    font-style: italic;
+    color: rgba(255,255,255,.6);
+  }
+
+  .gold-divider {
+    background: var(--navy);
+    display: flex;
+    justify-content: center;
+  }
+  .divider-ornament {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 0;
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-family: 'Source Serif 4',serif;
+    font-weight: 400;
+  }
+  .divider-ornament::after,
+  .divider-ornament::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.4;
+  }
+
+  .times-bar {
+    background: var(--navy);
+    padding: 28px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    border-top: 3px solid var(--gold);
+    border-bottom: 3px solid var(--gold);
+  }
+  .time-item {
+    text-align: center;
+    color: #fff;
+  }
+  .time-day {
+    font-size: 11px;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 0.1em;
+    color: var(--gold-light);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .time-hour {
+    font-family: 'Playfair Display',serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+  }
+  .time-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,.55);
+    margin-top: 3px;
+  }
+  .time-sep {
+    width: 1px;
+    height: 48px;
+    background: rgba(255,255,255,.15);
+  }
+
+  .mission-section {
+    background: var(--cream);
+    padding: 56px 40px;
+    border-top: 1px solid var(--stone);
+  }
+  .section-label {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 0.14em;
+    color: var(--teal);
+    text-transform: uppercase;
+    margin-bottom: 36px;
+  }
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    max-width: 840px;
+    margin: 0 auto;
+  }
+  .mission-card {
+    background: var(--warm-white);
+    border: 1px solid var(--stone);
+    border-top: 3px solid var(--navy);
+    border-radius: 6px;
+    padding: 32px 28px;
+  }
+  .mission-card h3 {
+    font-family: 'Playfair Display',Georgia,serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 14px;
+  }
+  .mission-card p {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--text-mid);
+    line-height: 1.75;
+    font-style: italic;
+  }
+
+  /* FOOTER */
+  footer {
+    background: #111D29;
+    border-top: 3px solid var(--gold);
+  }
+  .footer-main {
+    padding: 52px 48px 40px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .footer-brand .logo-name-f {
+    font-family: 'Playfair Display',Georgia,serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+  }
+  .footer-brand .logo-sub-f {
+    font-family: 'Source Serif 4',serif;
+    font-size: 11px;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(228,195,106,.7);
+    letter-spacing: 0.06em;
+    margin-top: 4px;
+    margin-bottom: 20px;
+  }
+  .footer-brand p {
+    font-size: 14px;
+    color: rgba(255,255,255,.5);
+    line-height: 1.75;
+    max-width: 260px;
+  }
+  .footer-brand .footer-address {
+    margin-top: 18px;
+    font-size: 13.5px;
+    color: rgba(255,255,255,.6);
+    line-height: 1.8;
+  }
+  .footer-brand .footer-address strong {
+    color: rgba(255,255,255,.85);
+    font-weight: 600;
+  }
+  .footer-col h4 {
+    font-family: 'Playfair Display',Georgia,serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gold-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+  .footer-col a {
+    display: block;
+    font-size: 14px;
+    color: rgba(255,255,255,.58);
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color 0.18s;
+    font-family: 'Source Serif 4',serif;
+  }
+  .footer-col a:hover {
+    color: rgba(255,255,255,.9);
+  }
+  .footer-col .footer-service {
+    font-size: 13.5px;
+    color: rgba(255,255,255,.58);
+    line-height: 1.9;
+    font-family: 'Source Serif 4',serif;
+  }
+  .footer-col .footer-service strong {
+    color: rgba(255,255,255,.82);
+    font-weight: 600;
+    font-style: normal;
+  }
+  .footer-col .footer-service em {
+    font-style: italic;
+    color: rgba(228,195,106,.8);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.07);
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 18px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-copy {
+    font-size: 12.5px;
+    color: rgba(255,255,255,.32);
+    font-family: 'Source Serif 4',serif;
+  }
+  .footer-dev {
+    font-size: 12px;
+    color: rgba(255,255,255,.25);
+    font-family: 'Source Serif 4',serif;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .footer-dev a {
+    color: rgba(192,154,68,.6);
+    text-decoration: none;
+    transition: color 0.18s;
+  }
+  .footer-dev a:hover {
+    color: rgba(228,195,106,.9);
+  }
+  .footer-dev::before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 1px;
+    background: rgba(255,255,255,.12);
+  }
+</style>
+
+<nav>
+  <div class="logo-area">
+    <svg width="38" height="38" viewBox="0 0 38 38" fill="none"><line x1="19" y1="4" x2="19" y2="34" stroke="#C09A44" stroke-width="2.5" stroke-linecap="round"/><line x1="10" y1="12" x2="28" y2="12" stroke="#C09A44" stroke-width="2.5" stroke-linecap="round"/></svg>
+    <div>
+      <div class="logo-name">Shenandoah</div>
+      <div class="logo-sub">Baptist Church · Cedar Park, TX</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#">Sermons</a>
+    <a href="#">Events</a>
+    <a href="#">Ministries</a>
+    <a href="#">Contact</a>
+    <a href="#" class="nav-give">Give</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div>
+    <p class="hero-eyebrow">Cedar Park, Texas</p>
+    <h1 class="hero-title">A Home for<br>
+      <span>Faith, Family,</span><br>&amp; Community</h1>
+    <p class="hero-subtitle">A welcoming Baptist church for families and those seeking hope in the Austin area.</p>
+    <div class="hero-ctas">
+      <button class="btn-primary">Plan Your Visit</button>
+      <button class="btn-secondary">Watch Sunday's Sermon</button>
+    </div>
+  </div>
+  <div class="hero-video">
+    <div class="play-btn">
+      <svg width="20" height="20" viewBox="0 0 20 20"><path d="M7 4L16 10L7 16V4Z" fill="#1C3557"/></svg>
+    </div>
+    <span class="video-label">Shenandoah Baptist Church · March 8, 2026</span>
+  </div>
+</div>
+
+<div class="gold-divider">
+  <div class="divider-ornament">Rooted in Scripture · Growing in Grace</div>
+</div>
+
+<div class="times-bar">
+  <div class="time-item">
+    <div class="time-day">Sunday</div>
+    <div class="time-hour">9:00 AM</div>
+    <div class="time-desc">Sunday School</div>
+  </div>
+  <div class="time-sep"></div>
+  <div class="time-item">
+    <div class="time-day">Sunday</div>
+    <div class="time-hour">10:30 AM</div>
+    <div class="time-desc">Morning Worship</div>
+  </div>
+  <div class="time-sep"></div>
+  <div class="time-item">
+    <div class="time-day">Wednesday</div>
+    <div class="time-hour">6:30 PM</div>
+    <div class="time-desc">Midweek Service</div>
+  </div>
+  <div class="time-sep"></div>
+  <button class="btn-primary" style="font-size:13.5px;padding:11px 20px">Get Directions</button>
+</div>
+
+<div class="mission-section">
+  <p class="section-label">Our Purpose</p>
+  <div class="two-col">
+    <div class="mission-card">
+      <h3>Mission</h3>
+      <p>"To glorify God by making disciples of our neighbors and the nations through evangelism, baptism, and biblical teaching."</p>
+    </div>
+    <div class="mission-card">
+      <h3>Vision</h3>
+      <p>"To see broken lives restored, faith grown, and the Gospel reach every person in our community."</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-main">
+
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><line x1="16" y1="3" x2="16" y2="29" stroke="#C09A44" stroke-width="2" stroke-linecap="round"/><line x1="8" y1="10" x2="24" y2="10" stroke="#C09A44" stroke-width="2" stroke-linecap="round"/></svg>
+        <div>
+          <div class="logo-name-f">Shenandoah Baptist Church</div>
+          <div class="logo-sub-f">Cedar Park, Texas</div>
+        </div>
+      </div>
+      <p>A small, welcoming church committed to families, community, and the Gospel. Everyone is known here.</p>
+      <div class="footer-address">
+        <strong>Address</strong><br>
+        123 Shenandoah Drive<br>
+        Cedar Park, TX 78613<br><br>
+        <strong>Phone</strong><br>
+        (512) 555-0184<br><br>
+        <strong>Email</strong><br>
+        <a href="#" style="color:rgba(228,195,106,.75);text-decoration:none;font-size:13.5px">info@shenandoahbaptist.org</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Visit</h4>
+      <a href="#">Plan Your First Visit</a>
+      <a href="#">Get Directions</a>
+      <a href="#">What to Expect</a>
+      <a href="#">Childcare &amp; Kids</a>
+      <a href="#">Contact Us</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Ministries</h4>
+      <a href="#">Youth Club</a>
+      <a href="#">Women's Ministry</a>
+      <a href="#">Men's Ministry</a>
+      <a href="#">Sunday School</a>
+      <a href="#">Community Events</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Service Times</h4>
+      <div class="footer-service">
+        <em>Sunday</em><br>
+        <strong>9:00 AM</strong> — Sunday School<br>
+        <strong>10:30 AM</strong> — Morning Worship<br><br>
+        <em>Wednesday</em><br>
+        <strong>6:30 PM</strong> — Midweek Service<br>
+        &amp; Youth Club
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <span class="footer-copy">&copy; 2026 Shenandoah Baptist Church · Cedar Park, TX · All rights reserved.</span>
+    <div class="footer-dev">Site design by <a href="#">Your Name / Studio</a>
+    </div>
+  </div>
+</footer>

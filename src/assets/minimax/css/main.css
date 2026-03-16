@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Ubuntu+Condensed");
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap');
 @import url('root.css');
 
 /*
@@ -88,10 +88,9 @@ input, select, textarea {
 
 	body {
 		font-size: 13.5pt;
-		font-family: sans-serif;
-		background-color: #e3e9dc;
-		font-family: 'Ubuntu Condensed', sans-serif;
-		color: #878e83;
+	    background: var(--warm-white);
+	    color: var(--text-dark);
+		font-family: 'Source Serif 4',Georgia,serif;
 		letter-spacing: -1px;
 	}
 
@@ -1518,6 +1517,7 @@ input, select, textarea {
 			background-image: linear-gradient(top, var(--button-hover-image-color-top), var(--button-hover-image-color-bottom));
 			background-color: var(--button-hover-color);
 			box-shadow: inset 0px 0px 0px 1px var(--button-hover-box-shadow-color);
+		
 		}
 
 /* Header */
@@ -1528,6 +1528,8 @@ input, select, textarea {
 		background-image: -ms-linear-gradient(top, var(--background-image-color-top), var(--background-image-color-bottom));
 		background-image: linear-gradient(top, var(--background-image-color-top), var(--background-image-color-bottom));
 		background-color: var(--background-color);
+		border-bottom: 3px solid var(--gold);
+
 	}
 
 	#header {
@@ -1540,7 +1542,7 @@ input, select, textarea {
 		-ms-box-sizing: content-box;
 		box-sizing: content-box;
 		position: relative;
-		margin: 2.5% 0 2.5% 0;
+		/*margin: 2.5% 0 2.5% 0;*/
 		padding: 0 40px 0 40px;
 		border-radius: 10px;
 		border: solid 1px var(--header-background-border);
@@ -1597,12 +1599,14 @@ input, select, textarea {
 					background-image: linear-gradient(top, var(--header-nav-a-hover-image-top), var(--header-nav-a-hover-image-bottom));
 					background-color: var(--header-nav-a-hover-color);
 					box-shadow: inset 0px 1px 5px 1px rgba(0, 0, 0, 0.05), 0px 0px 5px 1px rgba(255, 255, 255, 0.05);
+					border-radius: 10px;
 				}
 
 /* Banner */
 
 	#banner-wrapper {
-		background: #c8d2bc url(images/bg1.png);
+		/*background: #c8d2bc url(images/bg1.png);*/
+		background: linear-gradient(160deg,var(--navy) 0%,var(--navy-mid) 55%,#1E4E3A 100%);
 		padding: 2em 0;
 	}
 
@@ -1611,10 +1615,11 @@ input, select, textarea {
 		width: 100%;
 		padding: 6em 0;
 		border-radius: 10px;
-		background-image: url(images/banner.jpg);
+		/*background-image: url(images/banner.jpg);*/
 		background-size: cover;
+		background: rgba(0,0,0,.35);
 		text-align: center;
-		box-shadow: inset 0 0 0 20px #fff;
+		box-shadow: inset 0 0 0 20px var(--navy-mid); /* d#000;*/
 	}
 
 		#banner h2 {
@@ -1639,7 +1644,7 @@ input, select, textarea {
 
 	#main {
 		background: #fff;
-		padding: 4em 0;
+		padding: 0 0 0 0;
 	}
 
 /* Footer */

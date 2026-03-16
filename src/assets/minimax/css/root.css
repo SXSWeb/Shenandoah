@@ -1,14 +1,30 @@
 :root {
-  --background-color: #007897;
-  --heading-color: #007897;
+
+  /* Claude values */
+  --navy: #1C3557;
+  --navy-mid: #2A4A6B;
+  --gold: #C09A44;
+  --gold-light: #E4C36A;
+  --cream: #F7F3EC;
+  --warm-white: #FDFAF5;
+  --stone: #E8E0D0;
+  --text-dark: #1A1714;
+  --text-mid: #4A3F35;
+  --text-muted: #7A6E62;
+  --teal: #2E7D6B;
+  --border: rgba(28,53,87,0.12);  
+
+  /* Template values */
+  --background-color: var(--navy); /* #007897*/;
+  --heading-color: var(--navy);/* #007897;*/
   --a-link-color: #5d93a2;
 
-  --header-background-color: #007b9d;
-  --header-background-border: #006e8b;
-  --header-background-shadow: #12a0bf;
+  --header-background-color: var(--navy); /* #007b9d;*/
+  --header-background-border:var(--navy);/* #006e8b;*/
+  --header-background-shadow:var(--navy);/* #12a0bf;*/
   
   --header-nav-a-current-color: #007897;
-  --header-nav-a-hover-color: #0882a1;
+  --header-nav-a-hover-color: rgba(255,255,255,.1);/* #0882a1;*/
 
   --button-background-color: #007b9d;
   --button-border-color: #006e8b;
@@ -18,6 +34,7 @@
   --button-hover-image-color-bottom: #118eb1;
   --button-hover-color: #118eb1;
   --button-hover-box-shadow-color: #3ecceb;
+
 
   /* Not currently used visible due to lack of images inside these elements */
   --button-background-image-top: #008dad;

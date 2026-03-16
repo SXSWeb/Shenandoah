@@ -409,12 +409,14 @@ input, select, textarea {
 				}
 
 		.row {
+			/*
 			margin-top: -50px;
 			margin-left: -50px;
+			*/
 		}
 
 			.row > * {
-				padding: 50px 0 0 50px;
+				/*padding: 50px 0 0 50px;*/
 			}
 
 			.row.gtr-uniform {

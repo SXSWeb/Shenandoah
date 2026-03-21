@@ -443,6 +443,8 @@ input, select, textarea {
 		.row {
 			margin-top: -50px;
 			margin-left: -50px;
+			padding-top: 20px;
+			padding-bottom: 20px;
 			}
 
 			.row > * {
@@ -1421,6 +1423,8 @@ input, select, textarea {
 				.row {
 					margin-top: -20px;
 					margin-left: -20px;
+					padding-top : 10px;
+					padding-bottom : 10px;
 				}
 
 					.row > * {
@@ -1923,7 +1927,8 @@ input, select, textarea {
 				top: 0;
 				width: 275px;
 				z-index: 10002;
-				background: #00536F;
+				background: var(--background-color); /* #00536F;*/
+
 				color: #fff;
 				box-shadow: inset -10px 0px 40px 0px rgba(0, 0, 0, 0.5);
 			}
@@ -2024,7 +2029,10 @@ input, select, textarea {
 		/* Banner */
 
 			#banner-wrapper {
-				background: #c8d2bc url(images/bg1.png);
+				/*background: #c8d2bc url(images/bg1.png);*/
+				background: linear-gradient(160deg,var(--navy) 0%,var(--navy-mid) 55%,#1E4E3A 100%);
+				/*padding: 2em 0;*/
+
 				padding: 20px 0;
 			}
 

@@ -12,7 +12,8 @@
   --text-mid: #4A3F35;
   --text-muted: #7A6E62;
   --teal: #2E7D6B;
-  --border: rgba(28,53,87,0.12);  
+  --border: rgba(28,53,87,0.12);
+  --dark-navy: #111D29;
 
   /* Template values */
   --background-color: var(--navy); /* #007897*/;

@@ -7,6 +7,28 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+
+  /* NEED TO MOVE TO CORRECT SPACE IN STYLE SHEET */
+  .btn-secondary {
+    /*background: var(--navy-mid);*/
+	background: linear-gradient(160deg,var(--navy) 0%,var(--navy-mid) 55%, var(--dark-navy) 100%);
+    color: var(--warm-white);
+    border: 1.5px solid rgba(255,255,255,.35);
+    padding: 12px 22px;
+    font-family: 'Source Serif 4',serif;
+    font-size: 15px;
+    font-weight: 400;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: border-color 0.2s,color 0.2s;
+	width: 100%;
+  }
+
+    .btn-secondary:hover {
+    border-color: rgba(255,255,255,.65);
+    color: #fff;
+  }
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -1694,13 +1716,22 @@ input, select, textarea {
 
 	#footer-wrapper {
 		padding: 4em 0;
+	    background: var(--dark-navy);
+	    border-top: 3px solid var(--gold);
+
 	}
 
 	footer p {
 		line-height: 1.0em;
 		margin-bottom: 1.0em;
-
+		color: var(--warm-white)
 	}
+
+
+	footer h2 {
+		color: var(--gold)
+	}
+
 
 /* Copyright */
 

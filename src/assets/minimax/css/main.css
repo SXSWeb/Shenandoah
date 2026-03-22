@@ -147,7 +147,7 @@ input, select, textarea {
 	    background: var(--warm-white);
 	    color: var(--text-dark);
 		font-family: 'Source Serif 4',Georgia,serif;
-		letter-spacing: -1px;
+		letter-spacing: -0.2px;
 	}
 
 	h1, h2, h3, h4 {

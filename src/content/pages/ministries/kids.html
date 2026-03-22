@@ -5,12 +5,45 @@ permalink: "/ministries/kids/"
 tags: "sitemap" # content/content.json will make sure that all pages in content/ are marked with a "sitemap" tag, for automatic sitemap generation. As index.html is not in content/, we need to add it here to ensure the root page is included in the sitemap generation
 ---
 
+{% block head %}
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <style>
+        .carousel-cell img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Crops image to fit, use 'contain' to show full image */
+        }
+    </style>
+
+{% endblock %}
+
 {% extends "layouts/two-column-left.html" %}
 {% block content_left %}
 
     <section>
         <h1>Kids Ministry</h1>
         <h2>Kids Ministry in Cedar Park</h2>
+    </section>
+
+    <section>
+        <div class="main-carousel" height="200">
+            <div class="carousel-cell"><img src="/assets/images/ministries/kids/sbc-kids-nursery.jpeg"></div>
+            <div class="carousel-cell"><img src="/assets/images/ministries/kids/sbc-kids-CIA.jpeg"></div>
+            <div class="carousel-cell"><img src="/assets/images/ministries/kids/sbc-kids-mission1.jpeg"></div>
+            <div class="carousel-cell"><img src="/assets/images/ministries/kids/sbc-kids-mission2.jpeg"></div>
+            <div class="carousel-cell"><img src="/assets/images/ministries/kids/sbc-kids-mission3.jpeg"></div>
+            <div class="carousel-cell"><img src="/assets/images/ministries/kids/sbc-kids-mission4.jpeg"></div>
+            <div class="carousel-cell"><img src="/assets/images/ministries/kids/sbc-kids-mission5.jpeg"></div>
+            <div class="carousel-cell"><img src="/assets/images/ministries/kids/sbc-kids-ministries.jpg"></div>
+            <div class="carousel-cell"><img src="/assets/images/ministries/kids/sbc-kids-ministries2.jpeg"></div>
+        </div>
+
     </section>
 
     <section>
@@ -113,6 +146,16 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
         we invite your family to visit this Sunday.
     </p>
     </section>
+    <script>
+        $('.main-carousel').flickity({
+            // options
+            cellAlign: 'left',
+            contain: true,
+            wrapAround: true,
+            imagesLoaded: true,
+            /* autoPlay: true */
+        });
+    </script>
 
 {% endblock %}
 {% block content_right %}
@@ -129,15 +172,8 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 
     <section>
         <h2>Who are you guys?</h2>
-        <img src="/assets/minimax/images/sbc-kids-nursery.jpeg" width="100%"/>
-        <img src="/assets/minimax/images/sbc-kids-CIA.jpeg" width="100%"/>
-        <img src="/assets/minimax/images/sbc-kids-mission1.jpeg" width="100%"/>
-        <img src="/assets/minimax/images/sbc-kids-mission2.jpeg" width="100%"/>
-        <img src="/assets/minimax/images/sbc-kids-mission3.jpeg" width="100%"/>
-        <img src="/assets/minimax/images/sbc-kids-mission4.jpeg" width="100%"/>
-        <img src="/assets/minimax/images/sbc-kids-mission5.jpeg" width="100%"/>
-        <img src="/assets/minimax/images/sbc-kids-ministries.jpg" width="100%"/>
-        <img src="/assets/minimax/images/sbc-kids-ministries2.jpeg" width="100%"/>
+
+        <p>Some contetn here</p>
 
     </section>
 

@@ -156,6 +156,10 @@ input, select, textarea {
 	}
 
 	h1 {
+		font-size: 3em;
+		letter-spacing: -.5px;
+		margin-bottom: 1em;
+		font-weight: bold;
 	}
 
 	h2 {
@@ -187,7 +191,7 @@ input, select, textarea {
 	}
 
 	li {
-		/*margin-bottom: 1.25em;*/
+		margin-bottom: 1.25em;
 	}
 
 	p {

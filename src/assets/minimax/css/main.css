@@ -8,26 +8,28 @@
 */
 
 
-  /* NEED TO MOVE TO CORRECT SPACE IN STYLE SHEET */
-  .btn-secondary {
-    /*background: var(--navy-mid);*/
-	background: linear-gradient(160deg,var(--navy) 0%,var(--navy-mid) 55%, var(--dark-navy) 100%);
-    color: var(--warm-white);
-    border: 1.5px solid rgba(255,255,255,.35);
-    padding: 12px 22px;
-    font-family: 'Source Serif 4',serif;
-    font-size: 15px;
-    font-weight: 400;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: border-color 0.2s,color 0.2s;
-	width: 100%;
+/* Buttons */
+.btn-secondary {
+/*background: var(--navy-mid);*/
+background: linear-gradient(160deg,var(--navy) 0%,var(--navy-mid) 55%, var(--dark-navy) 100%);
+color: var(--warm-white);
+border: 1.5px solid rgba(255,255,255,.35);
+padding: 12px 22px;
+font-family: 'Source Serif 4',serif;
+font-size: 15px;
+font-weight: 400;
+border-radius: 15px;
+cursor: pointer;
+transition: border-color 0.2s,color 0.2s;
+width: 100%;
+margin-top: 1em;
+}
+
+.btn-secondary:hover {
+border-color: rgba(255,255,255,.65);
+color: #fff;
   }
 
-    .btn-secondary:hover {
-    border-color: rgba(255,255,255,.65);
-    color: #fff;
-  }
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,

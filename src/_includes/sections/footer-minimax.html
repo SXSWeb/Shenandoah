@@ -7,47 +7,94 @@
     <div id="footer-wrapper">
         <div class="container">
             <div class="row">
-                <div class="col-8 col-12-medium">
 
+                <div class="col-4 col-12-medium footer-brand">
                     <section>
-                        <h2>Contact Us</h2>
+                        <div class="logo-name-f">{{ client.name }}</div>
+                        <div class="logo-sub-f">{{ client.address.city }}, {{ client.address.state }}</div>
+
+                        <div class="footer-address">
+                            <strong>Address</strong>
+                            <p>{{ client.address.lineTwo }}<br/>
+                                {{ client.address.city }}, 
+                                {{ client.address.state }}</p>
+
+                            <strong>Phone</strong>
+                            <p>{{ client.phoneFormatted }}</p>
+
+                            <strong>Email</strong>
+                            <p>
+                                <a href="#" style="color:rgba(228,195,106,.75);text-decoration:none;font-size:13.5px">{{ client.email }}</a>
+
+                            </p>
+                        </div>
+
+                    </section>
+                </div>
+
+                <div class="col-4 col-12-medium">
+                    <section>
+                        <h4 class="gold">Ministries</h4>
                         <div>
-                            <p>{{ client.address.lineOne }}</p>
-                            <p>{{ client.address.lineTwo }}</p>
-                            <p>{{ client.address.city }}, 
-                                {{ client.address.state }}
-                                {{ client.address.zip }}</p>
+                            <section>
+                                <p>
+                                    <a href="/ministries/sunday-school-adult/">
+                                    Adult Sunday School
+                                </a>
+                                    <br/>
+
+                                    <a href="/ministries/kids/">
+                                    Kids Ministries
+                                </a>
+                                    <br/>
+
+                                    <a href="/ministries/youth/">
+                                    Youth Ministries
+                                </a>
+                                    <br/>
+
+                                    <a href="/ministries/women/">
+                                    Women Ministries
+                                </a>
+                                    <br/>
+
+                                    <a href="/ministries/men/">
+                                    Men Ministries
+                                </a>
+                                    <br/>
+
+                                    <a href="/ministries/music/">
+                                    Music Ministries
+                                </a>
+                                </p>
+
+                            </section>
                         </div>
                     </section>
-
                 </div>
+
                 <div class="col-4 col-12-medium">
-
                     <section>
-                        <h2>Something of interest</h2>
-                        <p>Duis neque nisi, dapibus sed mattis quis, rutrum accumsan sed.
-                        Suspendisse eu varius nibh. Suspendisse vitae magna eget odio amet
-                        mollis justo facilisis quis.</p>
-                        <footer class="controls">
-                            <a href="#" class="button">Oh, please continue ....</a>
-                        </footer>
-                    </section>
+                        <h4 class="gold">Service Times</h4>
+                        <p>
+                            <strong>Sunday  9:30am</strong> - Sunday School.</p>
+                        <p>
+                            <strong>Sunday 10:45am</strong> - Church Service</p>
+                    </div>
 
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
+                <div class="row">
+                    <div class="col-12" style ="padding: 10px 0 10px 0">
 
-                    <div id="copyright">
-                        &copy; {{ client.name }}. All rights reserved. | <a href="mailto:{{ client.email }}">{{ client.email }}</a>
-                    </div>
-                    <div>
-                        Webpage design by <a href="https://sxsweb.design/">SWSWeb</a>
-                    </div>
+                        <div class="footer-bottom">
+                            <span class="footer-copy">© 2026 {{ client.name }} · {{ client.address.city }}, {{ client.address.state }} · All rights reserved.</span>
+                            <div class="footer-dev">Site design by <a href="https://sxsweb.design/">SXSWeb</a>
+                            </div>
+                        </div>
 
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-</footer>
+    </footer>

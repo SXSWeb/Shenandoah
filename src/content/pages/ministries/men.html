@@ -5,12 +5,50 @@ permalink: "/ministries/men/"
 tags: "sitemap" # content/content.json will make sure that all pages in content/ are marked with a "sitemap" tag, for automatic sitemap generation. As index.html is not in content/, we need to add it here to ensure the root page is included in the sitemap generation
 ---
 
+{% block head %}
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <style>
+        .carousel-cell img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Crops image to fit, use 'contain' to show full image */
+        }
+    </style>
+
+{% endblock %}
+
 {% extends "layouts/two-column-left.html" %}
 {% block content_left %}
 
+    <h1>Men's Ministry</h1>
+    <h2>Men's Ministry in Cedar Park</h2>
+
     <section>
-        <h1>Men's Ministry</h1>
-        <h2>Men's Ministry in Cedar Park</h2>
+        <div class="main-carousel" height="200">
+            <div class="carousel-cell">
+                <picture>
+                    <source media="(max-width: 600px)" srcset="/assets/minimax/images/ministries/mens/lunch-m.webp">
+                    <source media="(min-width: 601px)" srcset="/assets/minimax/images/ministries/mens/lunch-m.jpg">
+                    <img aria-hidden="true" decoding="async" src="/assets/minimax/images/ministries/mens/lunch-m.jpg" alt="Men's lunch" loading="eager">
+                </picture>
+            </div>
+            <div class="carousel-cell">
+                <picture>
+                    <source media="(max-width: 600px)" srcset="/assets/minimax/images/ministries/mens/ministries-1-m.webp">
+                    <source media="(min-width: 601px)" srcset="/assets/minimax/images/ministries/mens/ministries-1-m.jpg">
+                    <img aria-hidden="true" decoding="async" src="/assets/minimax/images/ministries/mens/ministries-1-m.jpg" alt="Mens ministries" loading="eager">
+                </picture>
+            </div>
+        </div>
+    </section>
+
+    <section>
 
         <p>
         At Shenandoah Baptist Church, our men's ministry focuses on building strong
@@ -112,6 +150,17 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
     </p>
     </section>
 
+    <script>
+        $('.main-carousel').flickity({
+            // options
+            cellAlign: 'left',
+            contain: true,
+            wrapAround: true,
+            imagesLoaded: true,
+            /* autoPlay: true */
+        });
+    </script>
+
 {% endblock %}
 {% block content_right %}
 
@@ -123,12 +172,6 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
     <section class="mission">
         <h2>Mission</h2>
         <p>To glorify God by making disciples of our neighbors and the nations through evangelism, baptism, and biblical teaching.</p>
-    </section>
-
-    <section>
-        <h2>Who are you guys?</h2>
-        <img src="/assets/minimax/images/sbc-mens-ministries1.jpg" width="150%">
-        <img src="/assets/minimax/images/sbc-mens-lunch.jpg" width="150%">
     </section>
 
 {% endblock %}

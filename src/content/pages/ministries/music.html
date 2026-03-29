@@ -5,11 +5,76 @@ permalink: "/ministries/music/"
 tags: "sitemap" # content/content.json will make sure that all pages in content/ are marked with a "sitemap" tag, for automatic sitemap generation. As index.html is not in content/, we need to add it here to ensure the root page is included in the sitemap generation
 ---
 
+{% block head %}
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <style>
+        .carousel-cell img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Crops image to fit, use 'contain' to show full image */
+        }
+    </style>
+
+{% endblock %}
+
 {% extends "layouts/two-column-left.html" %}
 {% block content_left %}
 
     <h1>Music Ministry</h1>
     <h2>Church Music Ministry in Cedar Park</h2>
+
+    <section>
+        <div class="main-carousel" height="200">
+            <div class="carousel-cell">
+                <picture>
+                    <source media="(max-width: 600px)" srcset="/assets/minimax/images/ministries/music/group-m.webp">
+                    <source media="(min-width: 601px)" srcset="/assets/minimax/images/ministries/music/group-m.jpg">
+                    <img aria-hidden="true" decoding="async" src="/assets/minimax/images/ministries/music/group-m.jpg" alt="Music group" loading="eager">
+                </picture>
+            </div>
+            <div class="carousel-cell">
+                <picture>
+                    <source media="(max-width: 600px)" srcset="/assets/minimax/images/ministries/music/key-and-gui-m.webp">
+                    <source media="(min-width: 601px)" srcset="/assets/minimax/images/ministries/music/key-and-gui-m.jpg">
+                    <img aria-hidden="true" decoding="async" src="/assets/minimax/images/ministries/music/key-and-gui-m.jpg" alt="Keyboard" loading="eager">
+                </picture>
+            </div>
+            <div class="carousel-cell">
+                <picture>
+                    <source media="(max-width: 600px)" srcset="/assets/minimax/images/ministries/music/ministries-m.webp">
+                    <source media="(min-width: 601px)" srcset="/assets/minimax/images/ministries/music/ministries-m.jpg">
+                    <img aria-hidden="true" decoding="async" src="/assets/minimax/images/ministries/music/ministries-m.jpg" alt="Music ministry" loading="eager">
+                </picture>
+            </div>
+            <div class="carousel-cell">
+                <picture>
+                    <source media="(max-width: 600px)" srcset="/assets/minimax/images/ministries/music/practice-m.webp">
+                    <source media="(min-width: 601px)" srcset="/assets/minimax/images/ministries/music/practice-m.jpg">
+                    <img aria-hidden="true" decoding="async" src="/assets/minimax/images/ministries/music/practice-m.jpg" alt="Practice" loading="eager">
+                </picture>
+            </div>
+            <div class="carousel-cell">
+                <picture>
+                    <source media="(max-width: 600px)" srcset="/assets/minimax/images/ministries/music/practice-2-m.webp">
+                    <source media="(min-width: 601px)" srcset="/assets/minimax/images/ministries/music/practice-2-m.jpg">
+                    <img aria-hidden="true" decoding="async" src="/assets/minimax/images/ministries/music/practice-2-m.jpg" alt="Practice 2" loading="eager">
+                </picture>
+            </div>
+            <div class="carousel-cell">
+                <picture>
+                    <source media="(max-width: 600px)" srcset="/assets/minimax/images/ministries/music/audiovisual-m.webp">
+                    <source media="(min-width: 601px)" srcset="/assets/minimax/images/ministries/music/audiovisual-m.jpg">
+                    <img aria-hidden="true" decoding="async" src="/assets/minimax/images/ministries/music/audiovisual-m.jpg" alt="Audiovisual" loading="eager">
+                </picture>
+            </div>
+        </div>
+    </section>
 
     <section>
         <p>
@@ -154,6 +219,17 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
         </p>
     </section>
 
+    <script>
+        $('.main-carousel').flickity({
+            // options
+            cellAlign: 'left',
+            contain: true,
+            wrapAround: true,
+            imagesLoaded: true,
+            /* autoPlay: true */
+        });
+    </script>
+
 {% endblock %}
 {% block content_right %}
 
@@ -169,10 +245,11 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 
     <section>
         <h2>Come See Us?</h2>
-        <img src="/assets/minimax/images/sbc-musicguy.jpg" width="100%"/>
-        <img src="/assets/minimax/images/sbc-musicministries.jpg" width="100%"/>
-        <img src="/assets/minimax/images/sbc-music-group.jpeg" width="100%"/>
-        <img src="/assets/minimax/images/sbc-music-keyandgui.jpeg" width="100%"/>
+        <picture>
+            <source media="(max-width: 600px)" srcset="/assets/minimax/images/ministries/music/music-guy-m.webp">
+            <source media="(min-width: 601px)" srcset="/assets/minimax/images/ministries/music/music-guy-m.jpg">
+            <img aria-hidden="true" decoding="async" src="/assets/minimax/images/ministries/music/music-guy-m.jpg" alt="Musician" loading="eager" width="100%"/>
+        </picture>
     </section>
 
 {% endblock %}

@@ -5,25 +5,7 @@ permalink: "/ministries/kids/"
 tags: "sitemap" # content/content.json will make sure that all pages in content/ are marked with a "sitemap" tag, for automatic sitemap generation. As index.html is not in content/, we need to add it here to ensure the root page is included in the sitemap generation
 ---
 
-{% block head %}
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-    <!-- JavaScript -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-    <style>
-        .carousel-cell img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            /* Crops image to fit, use 'contain' to show full image */
-        }
-    </style>
-
-{% endblock %}
-
-{% extends "layouts/two-column-left.html" %}
+{% extends "layouts/ministries-two-column-left.html" %}
 {% block content_left %}
 
     <section>
@@ -199,17 +181,6 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
         we invite your family to visit this Sunday.
     </p>
     </section>
-
-    <script>
-        $('.main-carousel').flickity({
-            // options
-            cellAlign: 'left',
-            contain: true,
-            wrapAround: true,
-            imagesLoaded: true,
-            /* autoPlay: true */
-        });
-    </script>
 
 {% endblock %}
 {% block content_right %}

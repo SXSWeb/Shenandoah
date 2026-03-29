@@ -4,14 +4,43 @@ description: 'SXSWeb is a small business helping other small businesses flourish
 permalink: "/ministries/sunday-school-adult/"
 tags: "sitemap" # content/content.json will make sure that all pages in content/ are marked with a "sitemap" tag, for automatic sitemap generation. As index.html is not in content/, we need to add it here to ensure the root page is included in the sitemap generation
 ---
+{% block head %}
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <style>
+        .carousel-cell img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Crops image to fit, use 'contain' to show full image */
+        }
+    </style>
+
+{% endblock %}
 
 {% extends "layouts/two-column-left.html" %}
 {% block content_left %}
 
-    <section>
-        <h1>Adult Bible Study</h1>
-        <h2>Bible Study in Cedar Park</h2>
+    <h1>Adult Bible Study</h1>
+    <h2>Bible Study in Cedar Park</h2>
 
+    <section>
+        <div class="main-carousel" height="200">
+            <div class="carousel-cell">
+                <picture>
+                    <source media="(max-width: 600px)" srcset="/assets/minimax/images/ministries/adult/bibleschool-m.webp">
+                    <source media="(min-width: 601px)" srcset="/assets/minimax/images/ministries/adult/bibleschool-m.jpg">
+                    <img aria-hidden="true" decoding="async" src="/assets/minimax/images/ministries/adult/bibleschool-m.jpg" alt="Adult bible school" loading="eager">
+                </picture>
+            </div>
+        </div>
+    </section>
+
+    <section>
         <p>
         Studying the Bible together is an important part of life at Shenandoah
         Baptist Church. Our adult Bible studies provide a welcoming place to
@@ -119,6 +148,17 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
         we would love for you to join us this week.
     </p>
     </section>
+
+    <script>
+        $('.main-carousel').flickity({
+            // options
+            cellAlign: 'left',
+            contain: true,
+            wrapAround: true,
+            imagesLoaded: true,
+            /* autoPlay: true */
+        });
+    </script>
 
 {% endblock %}
 {% block content_right %}

@@ -5,6 +5,26 @@ permalink: "/"
 tags: "sitemap" # content/content.json will make sure that all pages in content/ are marked with a "sitemap" tag, for automatic sitemap generation. As index.html is not in content/, we need to add it here to ensure the root page is included in the sitemap generation
 ---
 
+{% block head %}
+	<script>
+		function loadVideo() {
+			const facade = document.getElementById('yt-facade');
+			const iframe = document.createElement('iframe');
+			iframe.width = '90%';
+			iframe.height = '315';
+			iframe.style = 'margin: 0 auto 0 auto;';
+			iframe.src = 'https://www.youtube.com/embed/videoseries?list=PLbkYZnl5evTC5Be8fi7R6HpbwkcVGDUEL&autoplay=1';
+			iframe.title = 'YouTube video player';
+			iframe.frameBorder = '0';
+			iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+			iframe.allowFullscreen = true;
+			iframe.style.display = 'block';
+			facade.replaceWith(iframe);
+		}
+	</script>
+
+{% endblock %}
+
 {% extends "layouts/base-minimax.html" %}
 
 {% block body %}
@@ -16,7 +36,76 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 				<div id="banner">
 					<h2>Baptist Church in Cedar Park, TX</h2>
 					<span>A Welcoming Church for Families and Those Seeking Hope</span>
-					<iframe  width="90%" height="315" src="https://www.youtube.com/embed/videoseries?list=PLbkYZnl5evTC5Be8fi7R6HpbwkcVGDUEL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+					<div id="video-container" style="margin: 0 auto 0 auto;">
+						<div id="yt-facade" onclick="loadVideo()" style="
+						position: relative;
+						width: 90%;
+						height: 315px;
+						cursor: pointer;
+						background: #000;
+						border-radius: 4px;
+						overflow: hidden;
+						margin: 0 auto 0 auto;
+						">
+
+							<img
+						src="assets/minimax/images/sermon-thumbnail.jpg"
+						alt="Watch our latest sermon"
+						loading="lazy"
+						style="
+							position: absolute;
+							inset: 0;
+							width: 100%;
+							height: 100%;
+							object-fit: cover;
+							opacity: 0.85;
+						"
+						/>
+
+							<!-- Dark gradient at bottom for text legibility -->
+							<div style="
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						right: 0;
+						height: 45%;
+						background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.72));
+						"></div>
+
+							<!-- Text overlay -->
+							<div style="
+						position: absolute;
+						bottom: 16px;
+						left: 0;
+						right: 0;
+						text-align: center;
+						color: #fff;
+						font-size: 1.1rem;
+						font-weight: 600;
+						letter-spacing: 0.02em;
+						text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+						pointer-events: none;
+						">
+						Watch our latest sermon
+						</div>
+
+							<!-- Play button -->
+							<div style="
+						position: absolute;
+						inset: 0;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						">
+								<svg width="68" height="48" viewBox="0 0 68 48">
+									<path d="M66.5 7.7a8.5 8.5 0 0 0-6-6C55.8 0 34 0 34 0S12.2 0 7.5 1.7a8.5 8.5 0 0 0-6 6C0 11.4 0 24 0 24s0 12.6 1.5 16.3a8.5 8.5 0 0 0 6 6C12.2 48 34 48 34 48s21.8 0 26.5-1.7a8.5 8.5 0 0 0 6-6C68 36.6 68 24 68 24s0-12.6-1.5-16.3z" fill="#ff0000"/>
+									<path d="M27 34l18-10-18-10v20z" fill="#fff"/>
+								</svg>
+							</div>
+						</div>
+					</div>
+
 				</div>
 
 			</div>
@@ -61,12 +150,12 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 							<h2>At Shenandoah Baptist Church</h2>
 							<ul class="small-image-list">
 								<li>
-									<a href="#"><img src="assets/minimax/images/sbc-pastor-marcos.jpg" alt="Pastor Marcos" class="left"/></a>
+									<a href="#"><img src="assets/minimax/images/sbc-pastor-marcos.jpg" alt="Pastor Marcos" class="left" loading="lazy"/></a>
 									<h4>Pastor Marcos</h4>
 									<p>We are a small, relational Christian church committed to helping people grow closer to God, build meaningful community, and find lasting hope in Christ.</p>
 								</li>
 								<li>
-									<a href="#"><img src="assets/minimax/images/sbc-pastors2.jpg" alt="" class="left"/></a>
+									<a href="#"><img src="assets/minimax/images/sbc-pastors2.jpg" alt="" class="left" loading="lazy"/></a>
 									<h4>Wesley Griffin</h4>
 									<p>Whether you've followed Jesus for years or you're simply curious about church, you are welcome here. Talk with me on Wednesday nights</p>
 								</li>
@@ -139,17 +228,17 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 							<p>In a growing area like Cedar Park, it's easy to feel lost in the noise. We believe church should feel personal.At Shenandoah Baptist Church: You'll be greeted warmly. Your children will be cared for. Your questions are welcome. Your family will be known. </p>
 							<ul class="big-image-list">
 								<li>
-									<a href="#"><img src="/assets/minimax/images/sbc-logo.png" alt="" class="left"/></a>
+									<a href="#"><img src="/assets/minimax/images/sbc-logo.png" alt="" class="left" loading="lazy"/></a>
 									<h3>Deborah Romero</h3>
 									<p>I love the ladies free sewing class.</p>
 								</li>
 								<li>
-									<a href="#"><img src="/assets/minimax/images/sbc-logo.png" alt="" class="left"/></a>
+									<a href="#"><img src="/assets/minimax/images/sbc-logo.png" alt="" class="left" loading="lazy"/></a>
 									<h3>Michelle Ellis</h3>
 									<p> What a precious community of believers</p>
 								</li>
 								<li>
-									<a href="#"><img src="/assets/minimax/images/sbc-logo.png" alt="" class="left"/></a>
+									<a href="#"><img src="/assets/minimax/images/sbc-logo.png" alt="" class="left" loading="lazy"/></a>
 									<h3>Sheila Clevenger</h3>
 									<p>Shenandoah is one of the friendlist churches ever. Our Pastor preaches right out of God's word and welcomes our questions in Sunday School. Come join us and feel God's heart</p>
 								</li>

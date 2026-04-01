@@ -15,9 +15,12 @@
 
                         <div class="footer-address">
                             <strong>Address</strong>
-                            <p>{{ client.address.lineTwo }}<br/>
-                                {{ client.address.city }}, 
-                                {{ client.address.state }}</p>
+                            <p>
+                                <a href={{ client.address.mapLink }} target="map">
+                                    {{ client.address.lineTwo }}<br/>
+                                    {{ client.address.city }}, 
+                                {{ client.address.state }}</a>
+                            </p>
 
                             <strong>Phone</strong>
                             <p>{{ client.phoneFormatted }}</p>
